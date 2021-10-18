@@ -1,0 +1,38 @@
+<h1 class="text-center">Cart</h1>
+    <section>
+        <div class="container">
+            <table class="table mt-5">
+                <thead>
+                    <tr>
+                        <th scopr=col>Date</th>
+                        <th scopr=col>Address</th>
+                        <th scopr=col>pincode</th>
+                        <th scopr=col>mobile</th>
+                        <th scopr=col>amount</th>
+                        <th scopr=col>payment</th>
+                        <th scopr=col>status</th>
+                    
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each orders}}
+                    <tr>
+                        <td>{{this.date}}</td>
+                        <td>{{this.deliveryDetails.address}}</td>
+                        <td>{{this.deliveryDetails.pincode}}</td>
+                        <td>{{this.deliveryDetails.mobile}}</td>
+                        <td>{{this.total}}</td>
+                        <td>{{this.paymentMethod}}</td>
+                        <td>{{this.status}}</td>
+                        <td>
+                            <a href="/view-order-products/{{this._id}}" class="btn btn-primary">View products {{this._id}}</a>
+                        </td>
+                       
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            
+            
+        </div>
+    </section>

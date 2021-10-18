@@ -1,0 +1,46 @@
+<h1 class="text-center">Cart</h1>
+    <section>
+        <div class="container">
+            <table class="table mt-5">
+                <thead>
+                    <tr>
+                        <th scopr=col>item</th>
+                        <th scopr=col>title</th>
+                        <th scopr=col>price</th>
+                        <th scopr=col>quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each products}}
+                    <tr>
+                        
+                        <td><img src="/product-images/{{this.product._id}}.jpg" alt="" style="width:12rem;height:13rem"></td>
+                        <td>{{this.product.name}}</td>
+                        <td>Rs.{{this.product.price}}</td>
+                         
+                        <td>
+                            <butoon class="cart-item-count btn btn-secondary m-3" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user}}',-1)">-</butoon>
+                            <span id="{{this.product._id}}">{{this.quantity}}</span>
+                            <butoon class="cart-item-count btn btn-secondary m-3" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user}}',1)">+</butoon>
+                        </td>
+                        <td>
+                            <a href="" class="btn btn-danger">Remove</a>
+                        </td>
+                       
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            <hr>
+            <div class="float-right pr-5">
+                <h3 class="float-left mr-5 " >total Rs.<span id="total">{{total}}</span></h3>
+                <br>
+                <a href="/place-order" class="float-right btn btn-success mt-3" style="width:100%;">place order</a>
+            </div>
+            
+        </div>
+    </section>
+    <script >
+        
+        
+    </script>
